@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View taller.vehiculo_hijo View Tree -->
+    <record id="view_taller_vehiculo_hijo_tree" model="ir.ui.view">
+        <field name="name">view.taller.vehiculo_hijo.tree</field>
+        <field name="model">taller.vehiculo_hijo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- View taller.vehiculo_hijo form -->
+    <record id="view_taller_vehiculo_hijo_form" model="ir.ui.view">
+        <field name="name">view.taller.vehiculo_hijo.form</field>
+        <field name="model">taller.vehiculo_hijo</field>
+        <field name="arch" type="xml">
+            <form string="Taller Vehiculo_hijo">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field name="name" placeholder="Name..." />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="vehiculo_id" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action taller.vehiculo_hijo -->
+    <record id="action_taller_vehiculo_hijo" model="ir.actions.act_window">
+        <field name="name">Taller Vehiculo Hijo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">taller.vehiculo_hijo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+    <menuitem
+        id="menu_taller_vehiculo_hijo"
+        name="Vehiculo Hijo"
+        action="action_taller_vehiculo_hijo"
+        parent="menu_taller"
+        sequence="10" />
+
+</odoo>

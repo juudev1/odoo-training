@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View taller.marca_vehiculo View Tree -->
+    <record id="view_taller_marca_vehiculo_tree" model="ir.ui.view">
+        <field name="name">view.taller.marca_vehiculo.tree</field>
+        <field name="model">taller.marca_vehiculo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- View taller.marca_vehiculo form -->
+    <record id="view_taller_marca_vehiculo_form" model="ir.ui.view">
+        <field name="name">view.taller.marca_vehiculo.form</field>
+        <field name="model">taller.marca_vehiculo</field>
+        <field name="arch" type="xml">
+            <form string="Taller Marca_vehiculo">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View taller.marca_vehiculo search -->
+    <record id="view_taller_marca_vehiculo_search" model="ir.ui.view">
+        <field name="name">view.taller.marca_vehiculo.search</field>
+        <field name="model">taller.marca_vehiculo</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action taller.marca_vehiculo -->
+    <record id="action_taller_marca_vehiculo" model="ir.actions.act_window">
+        <field name="name">Marca Vehiculo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">taller.marca_vehiculo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Taller Marca_vehiculo.
+            </p>
+        </field>
+    </record>
+
+</odoo>

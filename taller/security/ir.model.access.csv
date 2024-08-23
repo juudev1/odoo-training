@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_taller_vehiculo_manager,taller_vehiculo_manager,model_taller_vehiculo,,1,1,1,1
+access_taller_marca_vehiculo_manager,taller_marca_vehiculo_manager,model_taller_marca_vehiculo,,1,1,1,1
+access_taller_pasajero_manager,taller_pasajero_manager,model_taller_pasajero,,1,1,1,1
+access_vehiculo_pasajero_line_manager,vehiculo_pasajero_line_manager,model_vehiculo_pasajero_line,,1,1,1,1
+access_taller_vehiculo_hijo_manager,taller_vehiculo_hijo_manager,model_taller_vehiculo_hijo,,1,1,1,1

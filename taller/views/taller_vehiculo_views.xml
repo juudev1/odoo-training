@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View taller.vehiculo View Tree -->
+    <record id="view_taller_vehiculo_tree" model="ir.ui.view">
+        <field name="name">view.taller.vehiculo.tree</field>
+        <field name="model">taller.vehiculo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- View taller.vehiculo form -->
+    <record id="view_taller_vehiculo_form" model="ir.ui.view">
+        <field name="name">view.taller.vehiculo.form</field>
+        <field name="model">taller.vehiculo</field>
+        <field name="arch" type="xml">
+            <form string="Taller Vehiculo">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field name="name" placeholder="Name..." />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="marca_id" />
+                            <field name="placa" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="pasajeros" string="Pasajeros">
+                            <field name="pasajeros_line_ids">
+                                <tree>
+                                    <field name="pasajero_id" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="pasajero_id" />
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View taller.vehiculo search -->
+    <record id="view_taller_vehiculo_search" model="ir.ui.view">
+        <field name="name">view.taller.vehiculo.search</field>
+        <field name="model">taller.vehiculo</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action taller.vehiculo -->
+    <record id="action_taller_vehiculo" model="ir.actions.act_window">
+        <field name="name">Taller Vehiculo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">taller.vehiculo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Taller Vehiculo.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_taller"
+        name="Taller"
+        web_icon="taller,static/description/icon.png"
+        sequence="10">
+
+        <menuitem
+            id="menu_taller_vehiculo"
+            name="Vehiculos"
+            action="action_taller_vehiculo"
+            sequence="1" />
+
+        <menuitem
+            id="menu_taller_marca"
+            action="action_taller_marca_vehiculo"
+            sequence="10" />
+    </menuitem>
+
+</odoo>
