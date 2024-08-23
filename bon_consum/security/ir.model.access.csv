@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+bon.consume.access_bon_consum,access_bon_consum,bon_consum.model_bon_consum,,1,1,1,1

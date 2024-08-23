@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_bon_consum_form" model="ir.ui.view">
+            <field name="name">bon.consum.form</field>
+            <field name="model">bon.consum</field>
+            <field name="arch" type="xml">
+                <form string ="Bon Consum Wizard">
+                    <group>
+                        <field name="date_from"></field>
+                        <field name="date_to"></field>
+                    </group>
+                    <group>
+                        <field name="analytic_account_id"></field>
+                    </group>
+                    <footer>
+                        <button string="Print report" name="action_print_report" type="object" class="oe_highlight" data-hotkey = "q"/>
+                        <button string="cancel"  special="cancel" class="btn btn-secondary" data-hotkey = "z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        
+
+        <!--	mrp.menu_mrp_reporting -->
+
+        <record id="action_bon_consum" model="ir.actions.act_window">
+            <field name="name">Bon Consum</field>
+            <field name="res_model">bon.consum</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="bon_consum.view_bon_consum_form"></field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="menu_bon_consum_wizard"
+            name="Bon Consum"
+            action="action_bon_consum"
+            parent="mrp.menu_mrp_reporting"
+            groups="base.group_user"
+            />
+            
+    </data>
+</odoo>
